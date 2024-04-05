@@ -11,7 +11,7 @@ pipeline{
             steps{
                 // mvn test
                 sh "mvn test"
-                echo "========executing A========"
+           
             }
             
         }
@@ -19,7 +19,7 @@ pipeline{
         stage("Build"){
             steps{
                 sh "mvn package"
-                echo "========executing A========"
+              
             }
             
         }
@@ -27,7 +27,7 @@ pipeline{
         stage("Deploy on Test"){
             steps{
                 deploy adapters: [tomcat9(credentialsId: 'tomcatserverdetails1', path: '', url: 'http://192.167.0.154:8080/')], contextPath: '/app', war: '**/*.war'
-                echo "========executing A========"
+                
             }
             
         }
@@ -36,7 +36,7 @@ pipeline{
             steps{
                 eploy adapters: [tomcat9(credentialsId: 'tomcatserverdetails1', path: '', url: 'http://192.167.0.154:8080/')], contextPath: '/app', war: '**/*.war'
                 
-                echo "========executing A========"
+                
             }
             
         }
