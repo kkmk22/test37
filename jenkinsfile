@@ -38,6 +38,8 @@ deploy adapters: [tomcat9(credentialsId: '2tomcatserverdetails', path: '', url: 
 
         stage("Deploy on prod"){
             steps{
+deploy adapters: [tomcat9(credentialsId: '2tomcatserverdetails', path: '', url: 'http://192.167.0.154:8080')], contextPath: '/app/test02', war: '**/*.war'
+ 
                 deploy adapters: [tomcat9(credentialsId: 'tomcatserverdetails1', path: '', url: 'http://192.167.0.154:8080/')], contextPath: '/app', war: '**/*.war'
                 
                 
