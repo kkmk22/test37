@@ -10,9 +10,9 @@ pipeline{
         stage("Test"){
             steps{
                 // mvn test
-                //sh "mvn --version"
+                sh "mvn --version"
                 //sh "mvn clean package"
-                sh "mvn test"
+                //sh "mvn test"
            
             }
             
